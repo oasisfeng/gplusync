@@ -6,11 +6,11 @@
 
 	<!-- GPlusync -->
 	<servlet>
-		<servlet-name>gplus2weibo</servlet-name>
-		<servlet-class>com.oasisfeng.x3.gplusync.GPlus2Weibo</servlet-class>
+		<servlet-name>gplusync</servlet-name>
+		<servlet-class>com.oasisfeng.x3.gplusync.GPlusync</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>gplus2weibo</servlet-name>
+		<servlet-name>gplusync</servlet-name>
 		<url-pattern>/_ah/mail/*</url-pattern>
 	</servlet-mapping>
 	<security-constraint>

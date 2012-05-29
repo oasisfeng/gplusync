@@ -43,7 +43,7 @@ import com.google.appengine.api.urlfetch.URLFetchServiceFactory;
 import com.oasisfeng.x3.xmpp.Notifier;
 
 /** @author Oasis */
-public class GPlus2Weibo extends HttpServlet {
+public class GPlusync extends HttpServlet {
 
 	protected boolean extractURLWithoutProtocol = true;
 
@@ -51,7 +51,7 @@ public class GPlus2Weibo extends HttpServlet {
 	private static final URL KWeiboUpdateApiUrl;
 
 	static {
-		try { mConfig.load(GPlus2Weibo.class.getResourceAsStream("/gplusync.properties")); }
+		try { mConfig.load(GPlusync.class.getResourceAsStream("/gplusync.properties")); }
 		catch (final IOException e) { throw new RuntimeException(e); }
 
 		URL url; try { url = new URL("http://api.t.sina.com.cn/statuses/update.xml"); }
@@ -266,6 +266,6 @@ public class GPlus2Weibo extends HttpServlet {
 			.setOAuthConsumerSecret(mConfig.getProperty("twitter.consumer.secret"))
 			.setOAuthAccessToken(mConfig.getProperty("twitter.access.token"))
 			.setOAuthAccessTokenSecret(mConfig.getProperty("twitter.access.secret")).build()).getInstance();
-	private static final Logger log = Logger.getLogger(GPlus2Weibo.class.getName());
+	private static final Logger log = Logger.getLogger(GPlusync.class.getName());
 	private static final long serialVersionUID = 1L;
 }
