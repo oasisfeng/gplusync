@@ -1,0 +1,24 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>X3.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- GPlusync -->
+	<servlet>
+		<servlet-name>gplus2weibo</servlet-name>
+		<servlet-class>com.oasisfeng.x3.gplusync.GPlus2Weibo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>gplus2weibo</servlet-name>
+		<url-pattern>/_ah/mail/*</url-pattern>
+	</servlet-mapping>
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/_ah/mail/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+</web-app>
